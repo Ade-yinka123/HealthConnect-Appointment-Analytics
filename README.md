@@ -158,12 +158,11 @@ The analysis was designed around questions such as:
 The project used:
 
 - 🟢 **Microsoft Excel**
-- 🐍 **Python**
 - 📊 **Exploratory Data Analysis**
 - 🧹 **Data Quality Assessment**
 - 📈 **Data Analysis**
 - 💡 **Business Intelligence**
-- 🤖 **AI-focused Analytical Thinking**
+- 🤖 **Analytical Thinking**
 
 ---
 
