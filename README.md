@@ -6,7 +6,8 @@
 
 As part of the **AnalystLab Africa Experience Lab – Week 4 Data Analytics Track**, I analysed the HealthConnect appointment dataset to understand appointment attendance and identify patterns associated with missed appointments.
 
-<img width="502" height="331" alt="healthconnect_analysis png" src="https://github.com/user-attachments/assets/01a54146-8130-4408-9eab-80b42ffdd21b" />
+<img width="1390" height="776" alt="Screenshot 2026-08-30 134847" src="https://github.com/user-attachments/assets/53332fee-f1b1-4b14-bd80-f36b8d0378d2" />
+
 
 
 ### 🎯 Central Project Question
