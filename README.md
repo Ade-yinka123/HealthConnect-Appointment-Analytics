@@ -435,30 +435,3 @@ HealthConnect-Appointment-Analytics/
 │   └── HealthConnect_Week5_Data_Analytics_Report.pdf
 │
 └── README.md
-📈 Project Progress
-Week	Focus	Status
-Week 4	Project Foundation and Planning	✅ Completed
-Week 5	Data Analysis and Insights	✅ Completed
-Week 6	Further Project Development	🔄 Upcoming
-⚠️ Project Limitations
-The dataset is fictional/synthetic.
-The analysis identifies patterns and associations rather than causation.
-Some fields contain small amounts of missing information.
-Cancelled appointments were analysed separately from No-Shows.
-👩‍💻 Author
-
-Tejumade Adeyinka
-
-Data Analyst
-
-Skills
-
-Python | Excel | SQL | Power BI | Data Analysis | Data Visualisation
-
-⭐ Project Status
-
-Week 5 Completed
-
-This project is an ongoing HealthConnect analytics project. Week 5 builds directly on the Week 4 foundation, with future project phases expected to expand the analysis and develop additional stakeholder-focused solutions.
-
-
