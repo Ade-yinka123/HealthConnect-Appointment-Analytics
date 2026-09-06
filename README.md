@@ -29,9 +29,14 @@ The objectives of this analysis were to:
 - Establish an analytical approach for the next phase of the project.
 
 ---
+# 📅 Project Journey
 
+## 🔹 Week 4 — Project Foundation
+
+Week 4 focused on establishing the foundation for the HealthConnect analytics project.
 ## 🗂️ Dataset
 
+---
 The dataset contains **5,000 appointment records** and **18 variables** relating to:
 
 - 👤 Patient demographics
@@ -153,39 +158,307 @@ The analysis was designed around questions such as:
 8. How can HealthConnect use these insights to improve patient engagement?
 
 ---
+## 🔹 Week 5 — Data Analysis and Insights
 
-## 🛠️ Tools & Technologies
+Week 5 builds directly on the analytical foundation established in Week 4.
 
-The project used:
+The project progressed from planning into practical data analysis.
 
-- 🟢 **Microsoft Excel**
-- 📊 **Exploratory Data Analysis**
-- 🧹 **Data Quality Assessment**
-- 📈 **Data Analysis**
-- 💡 **Business Intelligence**
-- 🤖 **Analytical Thinking**
+### Activities Completed
+
+- Data preparation.
+- Data quality assessment.
+- Exploratory Data Analysis (EDA).
+- Appointment attendance analysis.
+- No-show analysis.
+- KPI development.
+- Data visualisation.
+- Dashboard development.
+- Business insight generation.
+- Recommendation development.
 
 ---
 
-## 🔄 Analytical Approach
+# 📊 Project Dashboard
 
-The project followed a structured analytical process:
+<img width="5960" height="6127" alt="healthconnect_chart (1)" src="https://github.com/user-attachments/assets/45653405-7e51-40c9-bd24-fb2f9636bc11" />
+
+
+The dashboard provides an overview of appointment performance and highlights the key factors associated with missed appointments.
+
+---
+
+# 🛠️ Tools and Technologies
+
+The following tools and technologies were used throughout the project:
+
+- Python
+- Pandas
+- Matplotlib
+- Jupyter Notebook
+- Microsoft Excel
+- GitHub
+
+---
+
+# 📂 Dataset
+
+The HealthConnect appointment dataset contains **5,000 appointment records**.
+
+The dataset includes information relating to:
+
+- Appointment ID
+- Patient demographics
+- Appointment type
+- Appointment day
+- Appointment outcome
+- Booking lead time
+- Distance to clinic
+- Previous appointments
+- Previous no-shows
+- Reminder status
+- Reminder channel
+- Waiting time
+
+---
+
+# 🧹 Data Preparation
+
+Building on the Week 4 data understanding phase, Week 5 focused on validating and preparing the dataset for analysis.
+
+The data preparation process included:
+
+- Checking data types.
+- Checking for missing values.
+- Checking for duplicate records.
+- Validating appointment IDs.
+- Checking logical consistency.
+- Reviewing categorical values.
+- Reviewing numerical ranges.
+
+The dataset was then prepared for exploratory data analysis.
+
+---
+
+# 📈 Exploratory Data Analysis
+
+## 1️⃣ Overall Appointment Attendance
+
+<img width="1468" height="1270" alt="appointment distribution" src="https://github.com/user-attachments/assets/07821e5b-a0af-446b-ab9c-6d90982a7a70" />
+
+
+The first stage of the analysis examined the overall appointment outcome distribution.
+
+### Key Finding
+
+- **48.5%** of appointments resulted in a No-Show.
+- **46.3%** of appointments were attended.
+- **5.3%** of appointments were cancelled.
+
+Missed appointments were identified as HealthConnect's primary attendance challenge.
+
+---
+
+## 2️⃣ No-Shows by Booking Lead Time
+
+<img width="2060" height="1310" alt="no_shows_by_booking_time_" src="https://github.com/user-attachments/assets/829dde67-29d4-41ec-9fb6-eae2dca459c9" />
+
+Booking lead time was identified as one of the strongest factors associated with missed appointments.
+
+The no-show rate increased from **24.8% for appointments booked 0–3 days ahead** to **60.5% for appointments booked 31–60 days ahead**.
+
+### Key Insight
+
+Appointments scheduled far in advance were more likely to result in missed appointments.
+
+---
+
+## 3️⃣ No-Shows by Distance to Clinic
+
+<img width="2060" height="1310" alt="no_shows_by_distance_to_clinic" src="https://github.com/user-attachments/assets/dd7202db-73af-448c-9ebb-868d6dc70686" />
+
+The analysis explored the relationship between patient distance and appointment attendance.
+
+### Key Finding
+
+Patients living farther from the clinic showed higher no-show rates.
+
+The no-show rate increased from:
+
+- **46.5% for patients within 5km**
+- To **68.1% for patients living 30–50km away**
+
+### Key Insight
+
+Distance and accessibility may contribute to missed appointments.
+
+---
+
+## 4️⃣ Previous No-Show History
+
+<img width="2060" height="1310" alt="no_shows_by_previous_no_shows" src="https://github.com/user-attachments/assets/d0ac8178-2d13-499b-8ca3-76911e8821c2" />
+
+Previous attendance behaviour showed a strong relationship with future appointment attendance.
+
+### Key Finding
+
+Patients with **3 or more previous no-shows** had a **68.8% no-show rate**, compared with **43.5% for patients with no previous no-shows**.
+
+### Key Insight
+
+Previous attendance history can help identify patients who may require additional follow-up and support.
+
+---
+
+## 5️⃣ Appointment Reminder Analysis
+
+<img width="2960" height="1311" alt="no_shows_by_reminder" src="https://github.com/user-attachments/assets/4f3bf2ad-bfa4-4832-98e1-93362462261a" />
+
+The analysis also examined whether appointment reminders influenced attendance.
+
+### Key Findings
+
+- No-show rate without reminders: **51.4%**
+- No-show rate with reminders: **47.4%**
+- Best-performing reminder channel: **SMS at 45.8%**
+
+### Key Insight
+
+Appointment reminders showed a modest improvement in attendance, with SMS performing better than other reminder channels.
+
+---
+
+# 📊 Key Performance Indicators
+
+| KPI | Result |
+|-----|--------|
+| Total Appointments | 5,000 |
+| Attendance Rate | 46.28% |
+| No-Show Rate | 48.46% |
+| Cancellation Rate | 5.26% |
+| No-Show Rate Among Non-Cancelled Appointments | 51.15% |
+
+---
+
+# 💡 Key Business Insights
+
+### 🔴 Missed Appointments Are the Main Challenge
+
+No-Shows represent the largest appointment outcome and slightly exceed attended appointments.
+
+### ⏳ Booking Lead Time Is a Major Driver
+
+Appointments booked far in advance showed significantly higher no-show rates.
+
+### 📍 Distance Affects Attendance
+
+Patients living farther from the clinic were more likely to miss appointments.
+
+### 🔄 Previous Behaviour Predicts Future Behaviour
+
+Patients with a history of missed appointments showed a higher likelihood of future no-shows.
+
+### 📱 Reminders Help Improve Attendance
+
+Appointment reminders reduced no-show rates, with SMS showing the strongest performance.
+
+---
+
+# 💼 Recommendations
+
+## 1. Prioritise SMS Reminders
+
+Use SMS as the primary reminder channel while evaluating other communication channels as secondary options.
+
+## 2. Support High-Risk Patients
+
+Provide proactive reminders and follow-up for patients with a history of missed appointments.
+
+## 3. Monitor Long Lead-Time Appointments
+
+Introduce additional reminder strategies for appointments booked far in advance.
+
+## 4. Address Distance and Access Barriers
+
+Explore suitable support options for patients living farther from the clinic.
+
+## 5. Monitor Appointment Performance
+
+Continuously track attendance and no-show KPIs to measure improvement.
+
+---
+
+# 🚀 Skills Demonstrated
+
+Throughout Week 4 and Week 5, this project demonstrates the following skills:
+
+- Data Understanding
+- Data Cleaning and Preparation
+- Data Quality Assessment
+- Exploratory Data Analysis
+- Data Visualisation
+- KPI Development
+- Business Analysis
+- Healthcare Data Analysis
+- Python
+- Pandas
+- Matplotlib
+- GitHub Documentation
+- Business Insight Generation
+
+---
+
+# 📁 Project Structure
 
 ```text
-Raw Dataset
-     ↓
-Data Quality Assessment
-     ↓
-Data Validation
-     ↓
-Exploratory Data Analysis
-     ↓
-Identify Patterns
-     ↓
-Define KPIs
-     ↓
-Generate Business Questions
-     ↓
-Develop Insights
-     ↓
-AI & Predictive Analytics Opportunities
+HealthConnect-Appointment-Analytics/
+│
+├── README.md
+│
+├── data/
+│   └── HealthConnect_Appointment_Data.csv
+│
+├── notebooks/
+│   ├── Week4_HealthConnect_Analysis.ipynb
+│   └── Week5_HealthConnect_Analysis.ipynb
+│
+├── images/
+│   ├── appointment_outcome.png
+│   ├── booking_lead_time.png
+│   ├── distance_to_clinic.png
+│   ├── previous_no_shows.png
+│   ├── reminder_analysis.png
+│   └── healthconnect_dashboard.png
+│
+├── reports/
+│   ├── Week4_Report.pdf
+│   └── HealthConnect_Week5_Data_Analytics_Report.pdf
+│
+└── README.md
+📈 Project Progress
+Week	Focus	Status
+Week 4	Project Foundation and Planning	✅ Completed
+Week 5	Data Analysis and Insights	✅ Completed
+Week 6	Further Project Development	🔄 Upcoming
+⚠️ Project Limitations
+The dataset is fictional/synthetic.
+The analysis identifies patterns and associations rather than causation.
+Some fields contain small amounts of missing information.
+Cancelled appointments were analysed separately from No-Shows.
+👩‍💻 Author
+
+Tejumade Adeyinka
+
+Data Analyst
+
+Skills
+
+Python | Excel | SQL | Power BI | Data Analysis | Data Visualisation
+
+⭐ Project Status
+
+Week 5 Completed
+
+This project is an ongoing HealthConnect analytics project. Week 5 builds directly on the Week 4 foundation, with future project phases expected to expand the analysis and develop additional stakeholder-focused solutions.
+
+
