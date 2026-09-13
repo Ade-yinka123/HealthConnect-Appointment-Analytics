@@ -158,6 +158,7 @@ The analysis was designed around questions such as:
 8. How can HealthConnect use these insights to improve patient engagement?
 
 ---
+
 ## 🔹 Week 5 — Data Analysis and Insights
 
 Week 5 builds directly on the analytical foundation established in Week 4.
@@ -179,7 +180,7 @@ The project progressed from planning into practical data analysis.
 
 ---
 
-# 📊 Project Dashboard
+## 📊 Project Dashboard
 
 <img width="5960" height="6127" alt="healthconnect_chart (1)" src="https://github.com/user-attachments/assets/45653405-7e51-40c9-bd24-fb2f9636bc11" />
 
@@ -188,7 +189,7 @@ The dashboard provides an overview of appointment performance and highlights the
 
 ---
 
-# 🛠️ Tools and Technologies
+## 🛠️ Tools and Technologies
 
 The following tools and technologies were used throughout the project:
 
@@ -201,7 +202,7 @@ The following tools and technologies were used throughout the project:
 
 ---
 
-# 📂 Dataset
+## 📂 Dataset
 
 The HealthConnect appointment dataset contains **5,000 appointment records**.
 
@@ -222,7 +223,7 @@ The dataset includes information relating to:
 
 ---
 
-# 🧹 Data Preparation
+## 🧹 Data Preparation
 
 Building on the Week 4 data understanding phase, Week 5 focused on validating and preparing the dataset for analysis.
 
@@ -240,7 +241,7 @@ The dataset was then prepared for exploratory data analysis.
 
 ---
 
-# 📈 Exploratory Data Analysis
+## 📈 Exploratory Data Analysis
 
 ## 1️⃣ Overall Appointment Attendance
 
@@ -328,7 +329,7 @@ Appointment reminders showed a modest improvement in attendance, with SMS perfor
 
 ---
 
-# 📊 Key Performance Indicators
+## 📊 Key Performance Indicators
 
 | KPI | Result |
 |-----|--------|
@@ -340,7 +341,7 @@ Appointment reminders showed a modest improvement in attendance, with SMS perfor
 
 ---
 
-# 💡 Key Business Insights
+## 💡 Key Business Insights
 
 ### 🔴 Missed Appointments Are the Main Challenge
 
@@ -364,30 +365,33 @@ Appointment reminders reduced no-show rates, with SMS showing the strongest perf
 
 ---
 
-# 💼 Recommendations
+## 💼 Recommendations
 
-## 1. Prioritise SMS Reminders
+### 1. Prioritise SMS Reminders
 
 Use SMS as the primary reminder channel while evaluating other communication channels as secondary options.
 
-## 2. Support High-Risk Patients
+### 2. Support High-Risk Patients
 
 Provide proactive reminders and follow-up for patients with a history of missed appointments.
 
-## 3. Monitor Long Lead-Time Appointments
+### 3. Monitor Long Lead-Time Appointments
 
 Introduce additional reminder strategies for appointments booked far in advance.
 
-## 4. Address Distance and Access Barriers
+### 4. Address Distance and Access Barriers
 
 Explore suitable support options for patients living farther from the clinic.
 
-## 5. Monitor Appointment Performance
+### 5. Monitor Appointment Performance
 
 Continuously track attendance and no-show KPIs to measure improvement.
 
----
-### Week 6 — Advanced Analytics & Decision Support
+--- 
+
+
+
+## 🔹 Week 6 — Advanced Analytics & Decision Support
 Builds on Week 5 rather than repeating it. Moves from descriptive bucketed rates to statistically validated, jointly-modelled drivers, and from a single-variable risk flag to a compound risk score.
 
 - **Statistical validation:** chi-square tests and a joint logistic regression confirm booking lead time, distance, prior no-shows, and reminders are all independently significant drivers (p < 0.05); waiting time and appointment day are confirmed as non-drivers.
@@ -415,7 +419,38 @@ Builds on Week 5 rather than repeating it. Moves from descriptive bucketed rates
 - All findings are associational (observational data), not causal — recommendations should be validated against real operational data and, where possible, controlled testing before deployment.
 - Original data files are never modified in place; all derived fields and segments are computed on working copies.
 
-## Next Steps (Week 7)
+## Updated Findings, Recommendations & Limitations
+
+### Validated / refined findings
+- Booking lead time, distance to clinic, and prior no-show history are **statistically confirmed**
+  (individually and jointly) as the primary attendance drivers — not just descriptive patterns.
+- Waiting time is confirmed as **not** predictive, even controlling for other factors.
+- A compound risk score (0–3) built from these three drivers produces a clean, monotonic gradient
+  (24.6% → 65.1% no-show rate) and is a substantially stronger operational segmentation tool than any
+  single-variable rule used in Week 5.
+- Reminder effectiveness is consistent across risk tiers — reminders should remain universal, with the
+  risk score used to target additional (non-reminder) interventions.
+
+### Updated recommendations
+1. Deploy the risk score (0–3) as the primary triage tool for administrative follow-up, with tiered
+   effort: light touch for score 1, proactive outreach for score 2, priority phone-call/rescheduling
+   support for score 3.
+2. Keep SMS reminders universal (per Week 5) regardless of risk tier.
+3. Feed the risk score to the Data Science track as a benchmark for the predictive model, and revisit it
+   once model-based feature importance is available.
+4. Continue treating distance-related recommendations as requiring approved clinic procedures (e.g.
+   transport support), as noted in Week 5.
+
+### Limitations (carried forward and new)
+- Dataset remains fictional/synthetic; all findings require validation against real operational data.
+- Statistical significance confirms association, not causation — this is still an observational analysis.
+- The risk score thresholds (14 days, 10 km, ≥1 prior no-show) were chosen by testing a small grid of
+  options for a reasonable rate/coverage trade-off, not optimised via a formal model — the Data Science
+  baseline model should be treated as the more rigorous version of this segmentation once available.
+- The reminder-by-risk-tier test (Part 3) is borderline significant for the high-risk group (p = 0.067);
+  a larger sample or A/B-style test is needed before treating this as conclusive.
+
+ ## Next Steps (Week 7)
 
 - Compare the rule-based risk score against the Data Science track's model-predicted probabilities.
 - Design a properly powered reminder-timing/channel test, stratified by risk tier.
@@ -427,6 +462,7 @@ Builds on Week 5 rather than repeating it. Moves from descriptive bucketed rates
 
 ---
 *Part of the AnalystLab Africa Experience Lab — HealthConnect Clinic multidisciplinary project (Project Management, Data Analytics, Data Science, ML Engineering, and Generative AI tracks).*
+
 
 # 🚀 Skills Demonstrated
 
