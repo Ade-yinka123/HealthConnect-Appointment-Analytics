@@ -387,10 +387,50 @@ Explore suitable support options for patients living farther from the clinic.
 Continuously track attendance and no-show KPIs to measure improvement.
 
 ---
+### Week 6 — Advanced Analytics & Decision Support
+Builds on Week 5 rather than repeating it. Moves from descriptive bucketed rates to statistically validated, jointly-modelled drivers, and from a single-variable risk flag to a compound risk score.
+
+- **Statistical validation:** chi-square tests and a joint logistic regression confirm booking lead time, distance, prior no-shows, and reminders are all independently significant drivers (p < 0.05); waiting time and appointment day are confirmed as non-drivers.
+- **Compound risk segmentation:** a new 0–3 risk score (lead time > 14 days, distance > 10 km, prior no-shows ≥ 1) produces a clean, monotonic no-show gradient (24.6% → 65.1%) and captures **62.9% of all no-shows in 54.4% of appointments**, vs. 13.4% captured by the Week 5 single-variable rule.
+- **Reminder-by-risk-tier test:** no meaningful difference in reminder effectiveness across risk tiers — reminders should stay universal; the risk score should drive who gets additional (non-reminder) follow-up.
+- **Cross-track integration:** refined risk score and validated feature set shared with the Data Science track as a benchmark for their predictive model; documented dependency in both directions.
+
+📄 [`HealthConnect_Week6_Data_Analytics_Report.pdf`](./HealthConnect_Week6_Data_Analytics_Report.pdf)
+📓 [`HealthConnect_Week6_Advanced_Analytics.ipynb`](./HealthConnect_Week6_Advanced_Analytics.ipynb)
+
+
+## Key Metrics (Week 6)
+
+| Metric | Value |
+|---|---|
+| Overall no-show rate | 48.5% |
+| Strongest individual driver | Booking lead time (24.8% → 60.5% no-show rate) |
+| Compound risk score coverage | 62.9% of all no-shows in 54.4% of appointments |
+| Statistically validated drivers | Lead time, distance, prior no-shows, reminders |
+| Confirmed non-drivers | Waiting time, appointment day |
+
+## Data & Ethics Notes
+
+- Dataset is fictional/synthetic; no patient-identifiable information is present.
+- All findings are associational (observational data), not causal — recommendations should be validated against real operational data and, where possible, controlled testing before deployment.
+- Original data files are never modified in place; all derived fields and segments are computed on working copies.
+
+## Next Steps (Week 7)
+
+- Compare the rule-based risk score against the Data Science track's model-predicted probabilities.
+- Design a properly powered reminder-timing/channel test, stratified by risk tier.
+- Re-validate findings once an updated dataset or the Data Science track's Week 6 output is available.
+
+## Cross-Track Collaboration
+
+**Data Science ↔ Data Analytics:** validated features and the Week 6 compound risk score are shared as a benchmark for the baseline no-show prediction model; model feature-importance and error analysis (once available) will be used to refine the risk score further.
+
+---
+*Part of the AnalystLab Africa Experience Lab — HealthConnect Clinic multidisciplinary project (Project Management, Data Analytics, Data Science, ML Engineering, and Generative AI tracks).*
 
 # 🚀 Skills Demonstrated
 
-Throughout Week 4 and Week 5, this project demonstrates the following skills:
+Throughout Week 4,Week 5 and week 6 this project demonstrates the following skills:
 
 - Data Understanding
 - Data Cleaning and Preparation
@@ -406,32 +446,3 @@ Throughout Week 4 and Week 5, this project demonstrates the following skills:
 - GitHub Documentation
 - Business Insight Generation
 
----
-
-# 📁 Project Structure
-
-```text
-HealthConnect-Appointment-Analytics/
-│
-├── README.md
-│
-├── data/
-│   └── HealthConnect_Appointment_Data.csv
-│
-├── notebooks/
-│   ├── Week4_HealthConnect_Analysis.ipynb
-│   └── Week5_HealthConnect_Analysis.ipynb
-│
-├── images/
-│   ├── appointment_outcome.png
-│   ├── booking_lead_time.png
-│   ├── distance_to_clinic.png
-│   ├── previous_no_shows.png
-│   ├── reminder_analysis.png
-│   └── healthconnect_dashboard.png
-│
-├── reports/
-│   ├── Week4_Report.pdf
-│   └── HealthConnect_Week5_Data_Analytics_Report.pdf
-│
-└── README.md
