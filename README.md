@@ -399,8 +399,7 @@ Builds on Week 5 rather than repeating it. Moves from descriptive bucketed rates
 - **Reminder-by-risk-tier test:** no meaningful difference in reminder effectiveness across risk tiers — reminders should stay universal; the risk score should drive who gets additional (non-reminder) follow-up.
 - **Cross-track integration:** refined risk score and validated feature set shared with the Data Science track as a benchmark for their predictive model; documented dependency in both directions.
 
-📄 [`HealthConnect_Week6_Data_Analytics_Report.pdf`](./HealthConnect_Week6_Data_Analytics_Report.pdf)
-📓 [`HealthConnect_Week6_Advanced_Analytics.ipynb`](./HealthConnect_Week6_Advanced_Analytics.ipynb)
+
 
 
 ## Key Metrics (Week 6)
