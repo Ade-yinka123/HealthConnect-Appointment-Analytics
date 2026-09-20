@@ -463,6 +463,44 @@ Builds on Week 5 rather than repeating it. Moves from descriptive bucketed rates
 ---
 *Part of the AnalystLab Africa Experience Lab — HealthConnect Clinic multidisciplinary project (Project Management, Data Analytics, Data Science, ML Engineering, and Generative AI tracks).*
 
+## 🔹 Current status: Week 7 — Testing, Refinement & End-to-End Validation
+
+Week 7 tested the Week 6 outputs for reproducibility, statistical power and segment stability, and refined them where testing found problems.
+
+**Headline result:** one KPI was corrected. The Week 6 report's "risk score ≥2" no-show rate (59.0%) was an unweighted average of two tier rates rather than the correct n-weighted pooled rate. The corrected figure is **56.0%**. Everything else in Week 6 reproduced exactly.
+
+**What else Week 7 added:**
+- Verified the risk-score gradient holds across gender, age group and appointment type (12/13 segments monotonic)
+- Replaced Week 6's under-powered split-sample reminder test with a single pooled interaction model on the full dataset — the "reminder effect doesn't vary by risk tier" finding is now confirmed (p = 0.732) rather than merely suggestive
+- Ran a data-quality audit (no duplicates, no bad ranges, missing values all explainable)
+- Cross-track validation with Data Science: compared the rule-based risk score against a model-based probability estimate (an interim in-house logistic model, used as a stand-in since Data Science's own Week 6 model output had not yet been received) — r = 0.658, directionally consistent
+
+**Open item:** Data Science's actual Week 6 model output is still needed to re-run the cross-track validation against the real model rather than the interim proxy. See the issue log in the Week 7 report.
+
+---
+
+
+## Weekly progress
+
+| Week | Focus | Key output |
+|---|---|---|
+| Week 5 | EDA, KPIs, initial dashboard | 3 descriptive no-show drivers identified (lead time, distance, prior no-shows) |
+| Week 6 | Statistical validation, integration | Compound 0–3 risk score; drivers confirmed via chi-square + joint logistic regression |
+| Week 7 | Testing, refinement, validation | 1 KPI correction (59.0%→56.0%); segment stability confirmed; reminder finding upgraded from suggestive to confirmed; cross-track benchmark shared with Data Science |
+
+## Cross-track dependencies
+
+- **→ Data Science:** validated features, compound risk score, and (Week 7) an AUC/correlation benchmark for comparing against their model
+- **← Data Science:** baseline model feature usage (received); Week 6 model output, feature importance and error analysis (**pending** — tracked as an open issue for Week 8)
+
+## Limitations
+
+- Dataset is fictional/synthetic; all findings require validation against real operational data before deployment
+- Findings are observational (association, not causation)
+- Risk-score thresholds are heuristic, not model-optimised — expected to be superseded once Data Science's model is available
+- Week 7's cross-track validation used an interim in-house model in place of Data Science's actual Week 6 output
+
+
 
 # 🚀 Skills Demonstrated
 
