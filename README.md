@@ -1,521 +1,239 @@
-# 🏥 HealthConnect Appointment Analytics
+# HealthConnect Clinic — Appointment Analytics & Decision Support
 
-## 📌 Project Overview
+### AnalystLab Africa Experience Lab · Data Analytics & Data Science Tracks
 
-**HealthConnect Clinic** is a fictional healthcare provider experiencing challenges related to missed appointments, appointment-slot utilisation, and patient engagement.
+<img width="800" alt="HealthConnect project overview" src="https://github.com/user-attachments/assets/53332fee-f1b1-4b14-bd80-f36b8d0378d2" />
 
-As part of the **AnalystLab Africa Experience Lab – Week 4 Data Analytics Track**, I analysed the HealthConnect appointment dataset to understand appointment attendance and identify patterns associated with missed appointments.
+**Project question:** How can HealthConnect Clinic use data and AI to reduce missed appointments and improve the patient support experience?
 
-<img width="1390" height="776" alt="Screenshot 2026-08-30 134847" src="https://github.com/user-attachments/assets/53332fee-f1b1-4b14-bd80-f36b8d0378d2" />
-
-
-
-### 🎯 Central Project Question
-
-> **How can HealthConnect Clinic use data and AI to reduce missed appointments and improve the patient support experience?**
+HealthConnect Clinic is a fictional healthcare provider used as the basis for an eight-week, multidisciplinary project within the AnalystLab Africa Experience Lab. This repository documents the Data Analytics track's contribution — from initial data understanding through to a tested, validated, and presentation-ready final solution — and its collaboration with the project's Data Science track.
 
 ---
 
-## 🎯 Project Objectives
+## Contents
 
-The objectives of this analysis were to:
-
-- Understand the HealthConnect appointment dataset.
-- Assess the quality and completeness of the data.
-- Identify variables relevant to appointment attendance.
-- Investigate appointment outcome patterns.
-- Define meaningful business questions.
-- Identify relevant KPIs.
-- Establish an analytical approach for the next phase of the project.
-
----
-# 📅 Project Journey
-
-## 🔹 Week 4 — Project Foundation
-
-Week 4 focused on establishing the foundation for the HealthConnect analytics project.
-## 🗂️ Dataset
-
----
-The dataset contains **5,000 appointment records** and **18 variables** relating to:
-
-- 👤 Patient demographics
-- 📅 Appointment details
-- 📝 Booking information
-- 🔄 Previous appointment history
-- ❌ Previous no-shows
-- 📲 Reminder information
-- 📍 Distance to the clinic
-- ⏳ Waiting time
-- 📊 Appointment outcomes
-
-### Appointment Outcomes
-
-The appointment outcome categories are:
-
-- ✅ Attended
-- ❌ No-Show
-- 🚫 Cancelled
+- [Project Objectives](#project-objectives)
+- [Dataset](#dataset)
+- [Data Quality Assessment](#data-quality-assessment)
+- [Project Journey](#project-journey)
+- [Final Key Performance Indicators](#final-key-performance-indicators)
+- [Final Business Insights & Recommendations](#final-business-insights--recommendations)
+- [Cross-Track Collaboration](#cross-track-collaboration)
+- [Repository Structure](#repository-structure)
+- [How to Run](#how-to-run)
+- [Limitations](#limitations)
+- [Tools & Skills Demonstrated](#tools--skills-demonstrated)
 
 ---
 
-## 🔍 Data Quality Assessment
+## Project Objectives
 
-The initial data-quality assessment identified:
+- Understand the HealthConnect appointment dataset and assess its quality and completeness.
+- Identify the variables and patterns most closely associated with missed appointments.
+- Develop KPIs and a decision-support dashboard for clinic stakeholders.
+- Statistically validate the identified drivers and build a reproducible patient risk score.
+- Test, refine, and cross-validate the analysis against an independently built predictive model.
+- Deliver a final, presentation-ready package supporting HealthConnect's operational decisions.
 
-| Data Quality Check | Result |
+---
+
+## Dataset
+
+The dataset contains **5,000 appointment records** across **18 variables**, covering:
+
+- Patient demographics (age, gender)
+- Appointment details (type, day, outcome)
+- Booking information (lead time, appointment ID)
+- Prior appointment history and prior no-shows
+- Reminder information (sent status, channel)
+- Distance to clinic and waiting time
+
+**Appointment outcomes:** Attended · No-Show · Cancelled
+
+---
+
+## Data Quality Assessment
+
+| Check | Result |
 |---|---:|
-| Total Records | 5,000 |
-| Total Variables | 18 |
-| Exact Duplicate Rows | 0 |
-| Duplicate Appointment IDs | 0 |
-| Missing Distance Values | 90 (1.8%) |
-| Missing Waiting-Time Values | 60 (1.2%) |
-| Invalid Negative Booking Lead Days | 0 |
-| Previous No-Shows > Previous Appointments | 0 |
-| Booking Date Later Than Appointment Date | 0 |
+| Total records | 5,000 |
+| Total variables | 18 |
+| Exact duplicate rows | 0 |
+| Duplicate appointment IDs | 0 |
+| Missing distance values | 90 (1.8%) |
+| Missing waiting-time values | 60 (1.2%) |
+| Invalid negative booking lead days | 0 |
+| Previous no-shows exceeding previous appointments | 0 |
+| Booking date later than appointment date | 0 |
 
-Additional validation confirmed that **booking lead days were consistent with the booking and appointment dates**.
-
-The original dataset was preserved, and analysis was conducted using the working analysis file.
+Booking lead days were independently verified against the booking and appointment dates for consistency. The original dataset file was never modified — all analysis was performed on working copies, with derived fields and segments computed separately.
 
 ---
 
-## 📊 Key Findings
+## Project Journey
 
-### 1. Appointment Outcomes
+### Week 4 — Project Foundation
 
-| Outcome | Appointments | Rate |
-|---|---:|---:|
-| ❌ No-Show | 2,423 | 48.5% |
-| ✅ Attended | 2,314 | 46.3% |
-| 🚫 Cancelled | 263 | 5.3% |
-| **Total** | **5,000** | **100%** |
+Established the analytical foundation for the project: reviewed the dataset structure, ran the initial data-quality assessment above, defined the central project question, and identified an initial set of candidate KPIs and business questions to guide the analysis (missed-appointment rate, attendance patterns by patient group, the influence of booking lead time, distance, and reminders on attendance).
 
-The analysis shows that **No-Show was the largest appointment outcome category**, representing **48.5%** of all appointments.
+### Week 5 — Exploratory Data Analysis & Initial Dashboard
 
-This indicates a significant opportunity for HealthConnect to improve appointment attendance and patient engagement.
+Moved from planning into practical analysis: data preparation, exploratory data analysis, KPI development, dashboard construction, and an initial set of business recommendations.
+
+<img width="500" alt="Appointment outcome distribution" src="https://github.com/user-attachments/assets/07821e5b-a0af-446b-ab9c-6d90982a7a70" />
+
+**Overall attendance.** No-Show was the largest single outcome category — **48.5%** of appointments — ahead of Attended (46.3%) and Cancelled (5.3%).
+
+<img width="600" alt="No-shows by booking lead time" src="https://github.com/user-attachments/assets/829dde67-29d4-41ec-9fb6-eae2dca459c9" />
+
+**Booking lead time.** No-show rate rose from **24.8%** for appointments booked 0–3 days ahead to **67.7%** for appointments booked 46–60 days ahead — one of the strongest patterns in the dataset.
+
+<img width="600" alt="No-shows by distance to clinic" src="https://github.com/user-attachments/assets/dd7202db-73af-448c-9ebb-868d6dc70686" />
+
+**Distance to clinic.** No-show rate rose from **46.5%** for patients within 5 km to **68.1%** for patients 30–50 km away.
+
+<img width="600" alt="No-shows by previous no-show history" src="https://github.com/user-attachments/assets/d0ac8178-2d13-499b-8ca3-76911e8821c2" />
+
+**Prior no-show history.** Patients with three or more previous no-shows had a **68.8%** current no-show rate, compared with **43.5%** for patients with no prior no-shows.
+
+<img width="700" alt="No-shows by reminder channel" src="https://github.com/user-attachments/assets/4f3bf2ad-bfa4-4832-98e1-93362462261a" />
+
+**Reminders.** No-show rate was **51.4%** without a reminder versus **47.4%** with one; SMS was the best-performing individual channel at **45.8%**.
+
+These Week 5 findings were descriptive and associational, and were explicitly flagged as not establishing causation — a distinction the project carried forward and later tested statistically in Week 6.
+
+### Week 6 — Statistical Validation & Risk Segmentation
+
+Built directly on Week 5 rather than repeating it: moved from descriptive, bucketed rates to statistically validated, jointly modelled drivers, and from a single-variable risk flag to a compound risk score.
+
+- **Statistical validation.** Chi-square tests and a joint logistic regression confirmed that booking lead time, distance, prior no-shows, and reminder status are each independently significant drivers of no-shows (p < 0.05), even after controlling for one another. Waiting time and appointment day were confirmed as non-drivers.
+- **Compound risk segmentation.** A new 0–3 risk score (+1 point each for lead time > 14 days, distance > 10 km, and prior no-shows ≥ 1) produced a clean, monotonic no-show gradient from 24.6% to 65.1%, and captured **62.9% of all no-shows within 54.4% of appointments** — versus just 13.4% captured by the Week 5 single-variable rule.
+- **Reminder-by-risk-tier test.** No meaningful difference in reminder effectiveness was found across risk tiers, suggesting reminders should stay universal, with the risk score instead used to target additional, non-reminder follow-up.
+- **Cross-track integration.** The validated risk score and feature set were shared with the Data Science track as a benchmark for their predictive model, with the dependency documented in both directions.
+
+<img width="900" alt="HealthConnect analytics dashboard" src="https://github.com/user-attachments/assets/45653405-7e51-40c9-bd24-fb2f9636bc11" />
+
+### Week 7 — Testing, Refinement & End-to-End Validation
+
+Rather than assuming the Week 6 outputs were correct, Week 7 re-tested every reported figure against the underlying data.
+
+- **KPI correction.** The Week 6 report's headline "risk score ≥2" no-show rate (59.0%) turned out to be an unweighted average of two tier-level rates rather than the correct, n-weighted pooled rate. The corrected figure is **56.0%**; every other Week 6 figure reproduced exactly.
+- **Segment stability.** The risk-score gradient was confirmed to hold across gender, age group, and appointment type (12 of 13 segments tested).
+- **Statistical power.** Week 6's under-powered, split-sample reminder test was replaced with a single pooled interaction model on the full dataset — the "reminder effect does not vary by risk tier" finding was upgraded from suggestive to **confirmed** (p = 0.732).
+- **Data-quality audit.** No duplicates, no invalid ranges, and all missing values were traced to an explainable cause.
+- **Cross-track validation (interim).** The rule-based risk score was compared against a model-based probability estimate, using an interim in-house logistic model as a stand-in while Data Science's own Week 6 model output was still pending (r = 0.658, directionally consistent).
+
+### Week 8 — Final Integration & Presentation
+
+Finalised the Data Analytics track's contribution into a decision-ready package and closed out the cross-track validation with real data from the Data Science track.
+
+- **Cross-track dependency closed.** Data Science's actual refined model (a regularized logistic regression) was compared against the Data Analytics risk score on a proper held-out test set: AUC 0.596 (rule-based) vs. 0.662 (model-based), correlation r = 0.642. This also surfaced a genuine methodological finding — the original in-sample comparison in this project had overstated both AUC figures (0.609 / 0.680) — which is now corrected in both tracks' final numbers.
+- **Final package delivered:** a final notebook reproducing every headline figure from the raw dataset, a business-facing report (executive summary, final KPIs, recommendations, and the closed HC-POD integration record), a presentation deck, and an individual video script for the final HC-POD walkthrough.
 
 ---
 
-### 2. Previous No-Shows
+## Final Key Performance Indicators
 
-Appointments with at least one previous no-show had a higher observed current no-show rate than appointments with no previous no-shows.
-
-| Previous No-Shows | Current No-Show Rate |
+| KPI | Value |
 |---|---:|
-| 0 previous no-shows | 43.5% |
-| At least 1 previous no-show | 55.8% |
-
-This suggests that **previous appointment behaviour may be useful when identifying patients who could benefit from additional appointment support**.
-
-> ⚠️ These findings represent descriptive associations and should not be interpreted as proof of causation.
-
----
-
-### 3. Booking Lead Time
-
-A relationship was also observed between booking lead time and no-show rate.
-
-| Booking Lead Time | No-Show Rate |
-|---|---:|
-| 1–7 days | 27.8% |
-| 46–60 days | 67.7% |
-
-The observed pattern suggests that appointments booked further in advance may require additional engagement or reminder strategies.
-
-> ⚠️ These findings are descriptive associations and do not establish causation.
-
----
-
-## 📈 Proposed KPIs
-
-The following KPIs were identified for the HealthConnect project:
-
-| KPI | Purpose |
-|---|---|
-| **No-Show Rate** | Measures the percentage of appointments that patients miss |
-| **Attendance Rate** | Measures the percentage of appointments attended |
-| **Cancellation Rate** | Measures the percentage of appointments cancelled |
-| **Reminder Coverage Rate** | Measures the percentage of appointments receiving reminders |
-| **Average Booking Lead Time** | Measures the average number of days between booking and appointment |
-
-These KPIs will support deeper analysis and decision-making in subsequent project stages.
-
----
-
-## 💡 Business Questions
-
-The analysis was designed around questions such as:
-
-1. What percentage of appointments are missed?
-2. Which patient groups have higher no-show rates?
-3. Does previous no-show behaviour relate to future attendance?
-4. Does booking lead time affect appointment attendance?
-5. Does receiving a reminder relate to attendance?
-6. Does distance from the clinic influence no-show behaviour?
-7. Which appointment characteristics are associated with higher no-show rates?
-8. How can HealthConnect use these insights to improve patient engagement?
-
----
-
-## 🔹 Week 5 — Data Analysis and Insights
-
-Week 5 builds directly on the analytical foundation established in Week 4.
-
-The project progressed from planning into practical data analysis.
-
-### Activities Completed
-
-- Data preparation.
-- Data quality assessment.
-- Exploratory Data Analysis (EDA).
-- Appointment attendance analysis.
-- No-show analysis.
-- KPI development.
-- Data visualisation.
-- Dashboard development.
-- Business insight generation.
-- Recommendation development.
-
----
-
-## 📊 Project Dashboard
-
-<img width="5960" height="6127" alt="healthconnect_chart (1)" src="https://github.com/user-attachments/assets/45653405-7e51-40c9-bd24-fb2f9636bc11" />
-
-
-The dashboard provides an overview of appointment performance and highlights the key factors associated with missed appointments.
-
----
-
-## 🛠️ Tools and Technologies
-
-The following tools and technologies were used throughout the project:
-
-- Python
-- Pandas
-- Matplotlib
-- Jupyter Notebook
-- Microsoft Excel
-- GitHub
-
----
-
-## 📂 Dataset
-
-The HealthConnect appointment dataset contains **5,000 appointment records**.
-
-The dataset includes information relating to:
-
-- Appointment ID
-- Patient demographics
-- Appointment type
-- Appointment day
-- Appointment outcome
-- Booking lead time
-- Distance to clinic
-- Previous appointments
-- Previous no-shows
-- Reminder status
-- Reminder channel
-- Waiting time
-
----
-
-## 🧹 Data Preparation
-
-Building on the Week 4 data understanding phase, Week 5 focused on validating and preparing the dataset for analysis.
-
-The data preparation process included:
-
-- Checking data types.
-- Checking for missing values.
-- Checking for duplicate records.
-- Validating appointment IDs.
-- Checking logical consistency.
-- Reviewing categorical values.
-- Reviewing numerical ranges.
-
-The dataset was then prepared for exploratory data analysis.
-
----
-
-## 📈 Exploratory Data Analysis
-
-## 1️⃣ Overall Appointment Attendance
-
-<img width="1468" height="1270" alt="appointment distribution" src="https://github.com/user-attachments/assets/07821e5b-a0af-446b-ab9c-6d90982a7a70" />
-
-
-The first stage of the analysis examined the overall appointment outcome distribution.
-
-### Key Finding
-
-- **48.5%** of appointments resulted in a No-Show.
-- **46.3%** of appointments were attended.
-- **5.3%** of appointments were cancelled.
-
-Missed appointments were identified as HealthConnect's primary attendance challenge.
-
----
-
-## 2️⃣ No-Shows by Booking Lead Time
-
-<img width="2060" height="1310" alt="no_shows_by_booking_time_" src="https://github.com/user-attachments/assets/829dde67-29d4-41ec-9fb6-eae2dca459c9" />
-
-Booking lead time was identified as one of the strongest factors associated with missed appointments.
-
-The no-show rate increased from **24.8% for appointments booked 0–3 days ahead** to **60.5% for appointments booked 31–60 days ahead**.
-
-### Key Insight
-
-Appointments scheduled far in advance were more likely to result in missed appointments.
-
----
-
-## 3️⃣ No-Shows by Distance to Clinic
-
-<img width="2060" height="1310" alt="no_shows_by_distance_to_clinic" src="https://github.com/user-attachments/assets/dd7202db-73af-448c-9ebb-868d6dc70686" />
-
-The analysis explored the relationship between patient distance and appointment attendance.
-
-### Key Finding
-
-Patients living farther from the clinic showed higher no-show rates.
-
-The no-show rate increased from:
-
-- **46.5% for patients within 5km**
-- To **68.1% for patients living 30–50km away**
-
-### Key Insight
-
-Distance and accessibility may contribute to missed appointments.
-
----
-
-## 4️⃣ Previous No-Show History
-
-<img width="2060" height="1310" alt="no_shows_by_previous_no_shows" src="https://github.com/user-attachments/assets/d0ac8178-2d13-499b-8ca3-76911e8821c2" />
-
-Previous attendance behaviour showed a strong relationship with future appointment attendance.
-
-### Key Finding
-
-Patients with **3 or more previous no-shows** had a **68.8% no-show rate**, compared with **43.5% for patients with no previous no-shows**.
-
-### Key Insight
-
-Previous attendance history can help identify patients who may require additional follow-up and support.
-
----
-
-## 5️⃣ Appointment Reminder Analysis
-
-<img width="2960" height="1311" alt="no_shows_by_reminder" src="https://github.com/user-attachments/assets/4f3bf2ad-bfa4-4832-98e1-93362462261a" />
-
-The analysis also examined whether appointment reminders influenced attendance.
-
-### Key Findings
-
-- No-show rate without reminders: **51.4%**
-- No-show rate with reminders: **47.4%**
-- Best-performing reminder channel: **SMS at 45.8%**
-
-### Key Insight
-
-Appointment reminders showed a modest improvement in attendance, with SMS performing better than other reminder channels.
-
----
-
-## 📊 Key Performance Indicators
-
-| KPI | Result |
-|-----|--------|
-| Total Appointments | 5,000 |
-| Attendance Rate | 46.28% |
-| No-Show Rate | 48.46% |
-| Cancellation Rate | 5.26% |
-| No-Show Rate Among Non-Cancelled Appointments | 51.15% |
-
----
-
-## 💡 Key Business Insights
-
-### 🔴 Missed Appointments Are the Main Challenge
-
-No-Shows represent the largest appointment outcome and slightly exceed attended appointments.
-
-### ⏳ Booking Lead Time Is a Major Driver
-
-Appointments booked far in advance showed significantly higher no-show rates.
-
-### 📍 Distance Affects Attendance
-
-Patients living farther from the clinic were more likely to miss appointments.
-
-### 🔄 Previous Behaviour Predicts Future Behaviour
-
-Patients with a history of missed appointments showed a higher likelihood of future no-shows.
-
-### 📱 Reminders Help Improve Attendance
-
-Appointment reminders reduced no-show rates, with SMS showing the strongest performance.
-
----
-
-## 💼 Recommendations
-
-### 1. Prioritise SMS Reminders
-
-Use SMS as the primary reminder channel while evaluating other communication channels as secondary options.
-
-### 2. Support High-Risk Patients
-
-Provide proactive reminders and follow-up for patients with a history of missed appointments.
-
-### 3. Monitor Long Lead-Time Appointments
-
-Introduce additional reminder strategies for appointments booked far in advance.
-
-### 4. Address Distance and Access Barriers
-
-Explore suitable support options for patients living farther from the clinic.
-
-### 5. Monitor Appointment Performance
-
-Continuously track attendance and no-show KPIs to measure improvement.
-
---- 
-
-
-
-## 🔹 Week 6 — Advanced Analytics & Decision Support
-Builds on Week 5 rather than repeating it. Moves from descriptive bucketed rates to statistically validated, jointly-modelled drivers, and from a single-variable risk flag to a compound risk score.
-
-- **Statistical validation:** chi-square tests and a joint logistic regression confirm booking lead time, distance, prior no-shows, and reminders are all independently significant drivers (p < 0.05); waiting time and appointment day are confirmed as non-drivers.
-- **Compound risk segmentation:** a new 0–3 risk score (lead time > 14 days, distance > 10 km, prior no-shows ≥ 1) produces a clean, monotonic no-show gradient (24.6% → 65.1%) and captures **62.9% of all no-shows in 54.4% of appointments**, vs. 13.4% captured by the Week 5 single-variable rule.
-- **Reminder-by-risk-tier test:** no meaningful difference in reminder effectiveness across risk tiers — reminders should stay universal; the risk score should drive who gets additional (non-reminder) follow-up.
-- **Cross-track integration:** refined risk score and validated feature set shared with the Data Science track as a benchmark for their predictive model; documented dependency in both directions.
-
-
-
-
-## Key Metrics (Week 6)
-
-| Metric | Value |
-|---|---|
+| Total appointments analysed | 5,000 |
 | Overall no-show rate | 48.5% |
-| Strongest individual driver | Booking lead time (24.8% → 60.5% no-show rate) |
-| Compound risk score coverage | 62.9% of all no-shows in 54.4% of appointments |
-| Statistically validated drivers | Lead time, distance, prior no-shows, reminders |
-| Confirmed non-drivers | Waiting time, appointment day |
+| Attendance rate | 46.3% |
+| Cancellation rate | 5.3% |
+| No-show rate — risk score 0–1 (not flagged) | 39.4% |
+| No-show rate — risk score ≥2 (flagged) | 56.0% |
+| Share of appointments flagged by the risk score | 54.4% |
+| Share of all no-shows captured by the flagged segment | 62.9% |
+| No-show rate — reminder sent | 47.4% |
+| No-show rate — no reminder sent | 51.4% |
+| Cross-track benchmark — rule-based score (held-out AUC) | 0.596 |
+| Cross-track benchmark — Data Science's model (held-out AUC) | 0.662 |
 
-## Data & Ethics Notes
+---
 
-- Dataset is fictional/synthetic; no patient-identifiable information is present.
-- All findings are associational (observational data), not causal — recommendations should be validated against real operational data and, where possible, controlled testing before deployment.
-- Original data files are never modified in place; all derived fields and segments are computed on working copies.
+## Final Business Insights & Recommendations
 
-## Updated Findings, Recommendations & Limitations
+**Validated insights**
 
-### Validated / refined findings
-- Booking lead time, distance to clinic, and prior no-show history are **statistically confirmed**
-  (individually and jointly) as the primary attendance drivers — not just descriptive patterns.
-- Waiting time is confirmed as **not** predictive, even controlling for other factors.
-- A compound risk score (0–3) built from these three drivers produces a clean, monotonic gradient
-  (24.6% → 65.1% no-show rate) and is a substantially stronger operational segmentation tool than any
-  single-variable rule used in Week 5.
-- Reminder effectiveness is consistent across risk tiers — reminders should remain universal, with the
-  risk score used to target additional (non-reminder) interventions.
+1. Booking lead time, distance to clinic, and prior no-show history are statistically confirmed, independent drivers of missed appointments — not merely descriptive patterns.
+2. Waiting time and appointment day are confirmed **not** to be drivers, across every testing round in both the Data Analytics and Data Science tracks.
+3. The compound risk score (0–3) is validated and stable across patient segments, and its headline KPI has been corrected and independently reproduced.
+4. Reminder effectiveness does not vary meaningfully by risk tier — reminders should remain universal rather than targeted.
+5. Data Science's predictive model adds a genuine, if modest, improvement over the rule-based score (held-out AUC 0.662 vs. 0.596) and is best used as a complementary layer, not a replacement.
 
-### Updated recommendations
-1. Deploy the risk score (0–3) as the primary triage tool for administrative follow-up, with tiered
-   effort: light touch for score 1, proactive outreach for score 2, priority phone-call/rescheduling
-   support for score 3.
-2. Keep SMS reminders universal (per Week 5) regardless of risk tier.
-3. Feed the risk score to the Data Science track as a benchmark for the predictive model, and revisit it
-   once model-based feature importance is available.
-4. Continue treating distance-related recommendations as requiring approved clinic procedures (e.g.
-   transport support), as noted in Week 5.
+**Recommendations**
 
-### Limitations (carried forward and new)
-- Dataset remains fictional/synthetic; all findings require validation against real operational data.
-- Statistical significance confirms association, not causation — this is still an observational analysis.
-- The risk score thresholds (14 days, 10 km, ≥1 prior no-show) were chosen by testing a small grid of
-  options for a reasonable rate/coverage trade-off, not optimised via a formal model — the Data Science
-  baseline model should be treated as the more rigorous version of this segmentation once available.
-- The reminder-by-risk-tier test (Part 3) is borderline significant for the high-risk group (p = 0.067);
-  a larger sample or A/B-style test is needed before treating this as conclusive.
+1. Deploy the 0–3 risk score as the primary triage tool for administrative follow-up: light-touch for scores 0–1, proactive outreach for score 2, and priority phone-call or rescheduling support for score 3.
+2. Keep SMS reminders universal across all patients, regardless of risk tier.
+3. As ML Engineering integrates Data Science's model into an operational pipeline, treat it as a secondary refinement layer on top of the interpretable rule-based score, not an immediate replacement.
+4. Track no-show rate, capture rate by risk tier, and reminder compliance as ongoing KPIs.
+5. Design and run a properly powered, stratified reminder-timing/channel test as the next analytical investment.
 
- ## Next Steps (Week 7)
-
-- Compare the rule-based risk score against the Data Science track's model-predicted probabilities.
-- Design a properly powered reminder-timing/channel test, stratified by risk tier.
-- Re-validate findings once an updated dataset or the Data Science track's Week 6 output is available.
+---
 
 ## Cross-Track Collaboration
 
-**Data Science ↔ Data Analytics:** validated features and the Week 6 compound risk score are shared as a benchmark for the baseline no-show prediction model; model feature-importance and error analysis (once available) will be used to refine the risk score further.
-
----
-*Part of the AnalystLab Africa Experience Lab — HealthConnect Clinic multidisciplinary project (Project Management, Data Analytics, Data Science, ML Engineering, and Generative AI tracks).*
-
-## 🔹 Current status: Week 7 — Testing, Refinement & End-to-End Validation
-
-Week 7 tested the Week 6 outputs for reproducibility, statistical power and segment stability, and refined them where testing found problems.
-
-**Headline result:** one KPI was corrected. The Week 6 report's "risk score ≥2" no-show rate (59.0%) was an unweighted average of two tier rates rather than the correct n-weighted pooled rate. The corrected figure is **56.0%**. Everything else in Week 6 reproduced exactly.
-
-**What else Week 7 added:**
-- Verified the risk-score gradient holds across gender, age group and appointment type (12/13 segments monotonic)
-- Replaced Week 6's under-powered split-sample reminder test with a single pooled interaction model on the full dataset — the "reminder effect doesn't vary by risk tier" finding is now confirmed (p = 0.732) rather than merely suggestive
-- Ran a data-quality audit (no duplicates, no bad ranges, missing values all explainable)
-- Cross-track validation with Data Science: compared the rule-based risk score against a model-based probability estimate (an interim in-house logistic model, used as a stand-in since Data Science's own Week 6 model output had not yet been received) — r = 0.658, directionally consistent
-
-**Open item:** Data Science's actual Week 6 model output is still needed to re-run the cross-track validation against the real model rather than the interim proxy. See the issue log in the Week 7 report.
-
----
-
-
-## Weekly progress
-
-| Week | Focus | Key output |
+| | Provided to Data Science | Received from Data Science |
 |---|---|---|
-| Week 5 | EDA, KPIs, initial dashboard | 3 descriptive no-show drivers identified (lead time, distance, prior no-shows) |
-| Week 6 | Statistical validation, integration | Compound 0–3 risk score; drivers confirmed via chi-square + joint logistic regression |
-| Week 7 | Testing, refinement, validation | 1 KPI correction (59.0%→56.0%); segment stability confirmed; reminder finding upgraded from suggestive to confirmed; cross-track benchmark shared with Data Science |
+| Week 6 | Validated features and compound risk score, as a benchmark for their baseline model | Confirmation of baseline model features used |
+| Week 7 | Corrected KPI, properly powered reminder finding, interim AUC/correlation benchmark | — (Week 6 model output still pending) |
+| Week 8 | Final validated risk score and driver list | Final refined model, held-out AUC benchmark, and an in-sample-vs-held-out methodological correction — **dependency closed** |
 
-## Cross-track dependencies
+**Open dependencies going into final integration:**
+- ML Engineering — feature list, preprocessing steps, and model coefficients for pipeline integration.
+- Project Management — a decision-threshold review, since Data Science's error analysis found false negatives more frequent than false positives.
 
-- **→ Data Science:** validated features, compound risk score, and (Week 7) an AUC/correlation benchmark for comparing against their model
-- **← Data Science:** baseline model feature usage (received); Week 6 model output, feature importance and error analysis (**pending** — tracked as an open issue for Week 8)
+---
+
+## Repository Structure
+
+```
+├── data/
+│   └── HealthConnect_Appointment_Data.csv                     # approved project dataset (not modified)
+├── notebooks/
+│   ├── week_7_healthconnect.ipynb                             # testing, refinement, cross-track validation
+│   └── week_8_healthconnect.ipynb                             # final KPIs, dashboard, business insights
+├── reports/
+│   ├── HealthConnect_Week6_Data_Analytics_Report.pdf
+│   ├── HealthConnect_Week6_Project_Summary.pdf
+│   ├── HealthConnect_Week7_Data_Analytics_Testing_Report.docx
+│   ├── HealthConnect_Week7_Project_Summary.docx
+│   └── HealthConnect_Week8_Data_Analytics_Final_Package.pdf
+├── presentation/
+│   ├── HealthConnect_Week8_Data_Analytics_Presentation.pptx
+│   └── HealthConnect_Week8_Video_Script_Data_Analytics.docx
+└── README.md
+```
+*(Adjust the layout above to match your repository's actual organisation.)*
+
+---
+
+## How to Run
+
+```bash
+pip install pandas numpy matplotlib scipy statsmodels scikit-learn
+```
+
+Place `HealthConnect_Appointment_Data.csv` in the same folder as a notebook, then run all cells top to bottom. Each notebook is self-contained and re-derives its figures directly from the raw CSV.
+
+---
 
 ## Limitations
 
-- Dataset is fictional/synthetic; all findings require validation against real operational data before deployment
-- Findings are observational (association, not causation)
-- Risk-score thresholds are heuristic, not model-optimised — expected to be superseded once Data Science's model is available
-- Week 7's cross-track validation used an interim in-house model in place of Data Science's actual Week 6 output
+- The dataset is fictional and synthetic; all findings require validation against real HealthConnect operational data before any operational deployment.
+- Findings are observational — they establish association, not causation.
+- Risk-score thresholds (14 days, 10 km, ≥1 prior no-show) were chosen by testing a small grid of options, not formally optimised; Data Science's model is the more rigorous, data-driven alternative.
+- Some patient subgroups are too small in this dataset for fully reliable segment-level conclusions.
+- No live A/B test has yet been run on reminder timing or channel — this remains a recommended next step.
 
+---
 
+## Tools & Skills Demonstrated
 
-# 🚀 Skills Demonstrated
+**Tools:** Python, Pandas, Matplotlib, SciPy, statsmodels, scikit-learn, Jupyter Notebook, Microsoft Excel, GitHub
 
-Throughout Week 4,Week 5 and week 6 this project demonstrates the following skills:
+**Skills:** data understanding and quality assessment, data cleaning and preparation, exploratory data analysis, statistical hypothesis testing, KPI development, dashboard design, business insight generation, cross-functional collaboration, technical documentation, and stakeholder-ready presentation.
 
-- Data Understanding
-- Data Cleaning and Preparation
-- Data Quality Assessment
-- Exploratory Data Analysis
-- Data Visualisation
-- KPI Development
-- Business Analysis
-- Healthcare Data Analysis
-- Python
-- Pandas
-- Matplotlib
-- GitHub Documentation
-- Business Insight Generation
+---
 
+*Part of the AnalystLab Africa Experience Lab — HealthConnect Clinic multidisciplinary project (Project Management, Data Analytics, Data Science, ML Engineering, and Generative AI tracks).*
