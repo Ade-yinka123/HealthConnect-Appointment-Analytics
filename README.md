@@ -115,6 +115,8 @@ Built directly on Week 5 rather than repeating it: moved from descriptive, bucke
 
 ### Week 7 — Testing, Refinement & End-to-End Validation
 
+<img width="5957" height="1522" alt="week7_testing_dashboard" src="https://github.com/user-attachments/assets/53b88353-3f51-4c15-80c4-92bd2e0df675" />
+
 Rather than assuming the Week 6 outputs were correct, Week 7 re-tested every reported figure against the underlying data.
 
 - **KPI correction.** The Week 6 report's headline "risk score ≥2" no-show rate (59.0%) turned out to be an unweighted average of two tier-level rates rather than the correct, n-weighted pooled rate. The corrected figure is **56.0%**; every other Week 6 figure reproduced exactly.
@@ -122,8 +124,6 @@ Rather than assuming the Week 6 outputs were correct, Week 7 re-tested every rep
 - **Statistical power.** Week 6's under-powered, split-sample reminder test was replaced with a single pooled interaction model on the full dataset — the "reminder effect does not vary by risk tier" finding was upgraded from suggestive to **confirmed** (p = 0.732).
 - **Data-quality audit.** No duplicates, no invalid ranges, and all missing values were traced to an explainable cause.
 - **Cross-track validation (interim).** The rule-based risk score was compared against a model-based probability estimate, using an interim in-house logistic model as a stand-in while Data Science's own Week 6 model output was still pending (r = 0.658, directionally consistent).
-
-<img width="5957" height="1522" alt="week7_testing_dashboard" src="https://github.com/user-attachments/assets/53b88353-3f51-4c15-80c4-92bd2e0df675" />
 
 
 ### Week 8 — Final Integration & Presentation
