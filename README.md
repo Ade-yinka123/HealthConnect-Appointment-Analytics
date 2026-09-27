@@ -123,6 +123,9 @@ Rather than assuming the Week 6 outputs were correct, Week 7 re-tested every rep
 - **Data-quality audit.** No duplicates, no invalid ranges, and all missing values were traced to an explainable cause.
 - **Cross-track validation (interim).** The rule-based risk score was compared against a model-based probability estimate, using an interim in-house logistic model as a stand-in while Data Science's own Week 6 model output was still pending (r = 0.658, directionally consistent).
 
+<img width="5957" height="1522" alt="week7_testing_dashboard" src="https://github.com/user-attachments/assets/53b88353-3f51-4c15-80c4-92bd2e0df675" />
+
+
 ### Week 8 — Final Integration & Presentation
 
 Finalised the Data Analytics track's contribution into a decision-ready package and closed out the cross-track validation with real data from the Data Science track.
@@ -179,44 +182,6 @@ Finalised the Data Analytics track's contribution into a decision-ready package 
 | Week 7 | Corrected KPI, properly powered reminder finding, interim AUC/correlation benchmark | — (Week 6 model output still pending) |
 | Week 8 | Final validated risk score and driver list | Final refined model, held-out AUC benchmark, and an in-sample-vs-held-out methodological correction — **dependency closed** |
 
-**Open dependencies going into final integration:**
-- ML Engineering — feature list, preprocessing steps, and model coefficients for pipeline integration.
-- Project Management — a decision-threshold review, since Data Science's error analysis found false negatives more frequent than false positives.
-
----
-
-## Repository Structure
-
-```
-├── data/
-│   └── HealthConnect_Appointment_Data.csv                     # approved project dataset (not modified)
-├── notebooks/
-│   ├── week_7_healthconnect.ipynb                             # testing, refinement, cross-track validation
-│   └── week_8_healthconnect.ipynb                             # final KPIs, dashboard, business insights
-├── reports/
-│   ├── HealthConnect_Week6_Data_Analytics_Report.pdf
-│   ├── HealthConnect_Week6_Project_Summary.pdf
-│   ├── HealthConnect_Week7_Data_Analytics_Testing_Report.docx
-│   ├── HealthConnect_Week7_Project_Summary.docx
-│   └── HealthConnect_Week8_Data_Analytics_Final_Package.pdf
-├── presentation/
-│   ├── HealthConnect_Week8_Data_Analytics_Presentation.pptx
-│   └── HealthConnect_Week8_Video_Script_Data_Analytics.docx
-└── README.md
-```
-*(Adjust the layout above to match your repository's actual organisation.)*
-
----
-
-## How to Run
-
-```bash
-pip install pandas numpy matplotlib scipy statsmodels scikit-learn
-```
-
-Place `HealthConnect_Appointment_Data.csv` in the same folder as a notebook, then run all cells top to bottom. Each notebook is self-contained and re-derives its figures directly from the raw CSV.
-
----
 
 ## Limitations
 
@@ -236,4 +201,4 @@ Place `HealthConnect_Appointment_Data.csv` in the same folder as a notebook, the
 
 ---
 
-*Part of the AnalystLab Africa Experience Lab — HealthConnect Clinic multidisciplinary project (Project Management, Data Analytics, Data Science, ML Engineering, and Generative AI tracks).*
+*Part of the AnalystLab Africa Experience Lab — HealthConnect Clinic multidisciplinary project (Data Science).*
