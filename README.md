@@ -127,6 +127,7 @@ Rather than assuming the Week 6 outputs were correct, Week 7 re-tested every rep
 
 
 ### Week 8 — Final Integration & Presentation
+![Uploading week8_final_dashboard.png…]()
 
 Finalised the Data Analytics track's contribution into a decision-ready package and closed out the cross-track validation with real data from the Data Science track.
 
